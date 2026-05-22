@@ -4,6 +4,7 @@ import { Award, Scale, Users, Target, ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { CTASection } from "@/components/CTASection";
+import { BpgMark } from "@/components/Logo";
 import { firm } from "@/data/firm";
 
 export const metadata: Metadata = {
@@ -59,17 +60,10 @@ export default function AboutPage() {
                 <div className="absolute -bottom-24 -right-12 h-80 w-80 rounded-full bg-purple-400/30 blur-3xl" />
               </div>
               <div className="relative h-full flex flex-col justify-between p-10">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-7xl lg:text-8xl font-black tracking-tight bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
-                    B
-                  </span>
-                  <span className="text-7xl lg:text-8xl font-black tracking-tight bg-gradient-to-br from-blue-100 to-indigo-300 bg-clip-text text-transparent">
-                    P
-                  </span>
-                  <span className="text-7xl lg:text-8xl font-black tracking-tight bg-gradient-to-br from-indigo-200 to-purple-200 bg-clip-text text-transparent">
-                    G
-                  </span>
-                </div>
+                <BpgMark
+                  className="h-20 lg:h-24 w-auto drop-shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
+                  ariaLabel="BPG"
+                />
                 <div>
                   <p className="text-xs font-bold tracking-[0.2em] uppercase text-blue-200">
                     Bachar · Pordes · Goleczki
