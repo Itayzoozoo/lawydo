@@ -6,6 +6,16 @@ import { motion } from "framer-motion";
 import { Mail, ArrowUpRight } from "lucide-react";
 import type { Attorney } from "@/types";
 
+function initials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .map((p) => p[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
 export function AttorneyCard({
   attorney,
   index = 0,
@@ -25,14 +35,29 @@ export function AttorneyCard({
         href={`/attorneys/${attorney.slug}`}
         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-500 rounded-3xl"
       >
-        <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
-          <Image
-            src={attorney.image}
-            alt={`${attorney.name}, ${attorney.role}`}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+        <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-700">
+          {attorney.image ? (
+            <Image
+              src={attorney.image}
+              alt={`${attorney.name}, ${attorney.role}`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div aria-hidden className="pointer-events-none absolute inset-0">
+                <div className="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-blue-300/30 blur-3xl" />
+                <div className="absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-purple-400/30 blur-3xl" />
+              </div>
+              <span
+                className="relative text-7xl lg:text-8xl font-black tracking-tight text-white/90 drop-shadow-[0_2px_30px_rgba(0,0,0,0.25)]"
+                aria-hidden="true"
+              >
+                {initials(attorney.name)}
+              </span>
+            </div>
+          )}
           <div
             aria-hidden
             className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"

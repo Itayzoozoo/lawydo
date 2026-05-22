@@ -4,36 +4,35 @@ import { motion } from "framer-motion";
 import { Trophy, Users, ShieldCheck, Sparkles } from "lucide-react";
 
 const STATS = [
-  { value: "500+", label: "Cases Won" },
-  { value: "30+", label: "Years Experience" },
-  { value: "$340M", label: "Recovered for Clients" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: "60+", label: "Years Combined Experience" },
+  { value: "500+", label: "Transactions Closed" },
+  { value: "3", label: "Practice Groups" },
 ];
 
 const PILLARS = [
   {
     icon: Trophy,
-    title: "Track Record",
+    title: "Seasoned Partners",
     description:
-      "Three decades of favorable outcomes in courtrooms and boardrooms across the country.",
+      "Three founding partners with decades of practice across litigation, real estate, technology and finance.",
   },
   {
     icon: Users,
-    title: "Senior Attention",
+    title: "Business-Oriented",
     description:
-      "Partners — not just associates — work your matter from intake through resolution.",
+      "We approach legal questions with commercial judgment — built for the realities of running a business.",
   },
   {
     icon: ShieldCheck,
-    title: "Discretion",
+    title: "Cross-Border Reach",
     description:
-      "Confidentiality is non-negotiable. We earn the trust of clients who can choose anyone.",
+      "Active practice across Israel, the EU and the UAE, with regulatory familiarity in each.",
   },
   {
     icon: Sparkles,
-    title: "Clarity",
+    title: "Integrated Practice",
     description:
-      "Complex strategy explained in plain language, with clear options and honest counsel.",
+      "Banking, technology and corporate work under one roof — coordinated counsel from one firm.",
   },
 ];
 
@@ -70,7 +69,7 @@ export function WhyChooseUs() {
           </motion.h2>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}

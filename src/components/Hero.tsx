@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Award, Scale } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { firm } from "@/data/firm";
 
 const container = {
@@ -50,18 +50,18 @@ export function Hero() {
             variants={item}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-bold tracking-[0.18em] uppercase"
           >
-            <Scale className="w-3.5 h-3.5" aria-hidden="true" />
-            Established {firm.founded}
+            <span className="font-black tracking-tight">B · P · G</span>
+            <span className="opacity-70">Bachar, Pordes, Goleczki</span>
           </motion.div>
 
           <motion.h1
             variants={item}
             className="mt-8 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95]"
           >
-            Trusted Counsel.
+            Strategic Counsel.
             <br />
             <span className="bg-gradient-to-r from-blue-200 via-indigo-100 to-purple-200 bg-clip-text text-transparent">
-              Decisive Results.
+              Practical Results.
             </span>
           </motion.h1>
 
@@ -69,9 +69,7 @@ export function Hero() {
             variants={item}
             className="mt-8 max-w-2xl text-lg sm:text-xl text-blue-100/90 font-medium leading-relaxed"
           >
-            For three decades, {firm.name} has represented founders, families,
-            and Fortune 500 boards in their most consequential matters — with
-            judgment, discretion, and an unwavering record of results.
+            {firm.description}
           </motion.p>
 
           <motion.div
@@ -79,39 +77,37 @@ export function Hero() {
             className="mt-12 flex flex-col sm:flex-row gap-4"
           >
             <Link
-              href="/contact"
+              href="/practice-areas"
               className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-xl shadow-purple-900/40 hover:shadow-2xl hover:shadow-purple-700/40 hover:-translate-y-0.5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900 focus-visible:ring-white"
             >
-              Schedule a Consultation
+              Our Practice
               <ArrowRight
                 className="w-5 h-5 transition-transform group-hover:translate-x-1"
                 aria-hidden="true"
               />
             </Link>
-            <a
-              href={firm.phoneHref}
+            <Link
+              href="/about"
               className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-bold text-white border border-white/30 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900 focus-visible:ring-white"
             >
-              <Phone className="w-5 h-5" aria-hidden="true" />
-              {firm.phone}
-            </a>
+              Our Firm
+            </Link>
           </motion.div>
 
           <motion.div
             variants={item}
-            className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl"
+            className="mt-16 grid grid-cols-3 gap-6 max-w-2xl"
           >
             {[
-              { label: "Cases Won", value: "500+" },
-              { label: "Years Practicing", value: "30+" },
-              { label: "Recovered", value: "$340M" },
-              { label: "Attorneys", value: "24" },
+              { label: "Years Combined Experience", value: "60+" },
+              { label: "Transactions Closed", value: "500+" },
+              { label: "Practice Groups", value: "3" },
             ].map((s) => (
               <div key={s.label}>
-                <div className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                   {s.value}
                 </div>
-                <div className="mt-1 text-xs font-semibold tracking-widest uppercase text-blue-200/80">
+                <div className="mt-1 text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-blue-200/80 leading-tight">
                   {s.label}
                 </div>
               </div>
@@ -119,9 +115,15 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className="hidden xl:flex absolute right-10 bottom-10 items-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
-          <Award className="w-4 h-4" aria-hidden="true" />
-          Top-Ranked AV Preeminent · 2024
+        <div className="hidden xl:flex absolute right-10 bottom-10 items-center gap-6 text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+          <span className="inline-flex items-center gap-2">
+            <MapPin className="w-4 h-4" aria-hidden="true" />
+            {firm.addressDisplay}
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <Mail className="w-4 h-4" aria-hidden="true" />
+            {firm.email}
+          </span>
         </div>
       </div>
     </section>

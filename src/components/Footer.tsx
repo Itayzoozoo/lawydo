@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 import { firm } from "@/data/firm";
 import { practiceAreas } from "@/data/practice-areas";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
@@ -18,15 +19,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <Link href="/" className="inline-flex items-baseline gap-2">
-              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-blue-300 via-indigo-300 to-purple-300 bg-clip-text text-transparent">
-                Sterling
-              </span>
-              <span className="text-2xl font-light text-slate-500">&amp;</span>
-              <span className="text-2xl font-black tracking-tight text-white">
-                Vance
-              </span>
-            </Link>
+            <Logo size="md" variant="dark" />
             <p className="mt-4 text-sm text-slate-400 leading-relaxed max-w-xs">
               {firm.description}
             </p>
@@ -37,7 +30,7 @@ export function Footer() {
               Practice
             </h3>
             <ul className="mt-5 space-y-3">
-              {practiceAreas.map((p) => (
+              {practiceAreas.slice(0, 6).map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/practice-areas/${p.slug}`}
@@ -47,6 +40,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/practice-areas"
+                  className="text-sm font-semibold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent hover:from-blue-200 hover:to-purple-200"
+                >
+                  All practice areas →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -68,7 +69,7 @@ export function Footer() {
                   href="/attorneys"
                   className="text-sm text-slate-400 hover:text-white"
                 >
-                  Our Attorneys
+                  Our Partners
                 </Link>
               </li>
               <li>
@@ -84,7 +85,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-bold text-white tracking-wide uppercase">
-              Visit & Reach Us
+              Get In Touch
             </h3>
             <ul className="mt-5 space-y-4 text-sm text-slate-400">
               <li className="flex gap-3">
@@ -92,20 +93,7 @@ export function Footer() {
                   className="w-5 h-5 mt-0.5 text-purple-300 shrink-0"
                   aria-hidden="true"
                 />
-                <span>
-                  {firm.address.street}
-                  <br />
-                  {firm.address.city}, {firm.address.state} {firm.address.zip}
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <Phone
-                  className="w-5 h-5 mt-0.5 text-purple-300 shrink-0"
-                  aria-hidden="true"
-                />
-                <a href={firm.phoneHref} className="hover:text-white">
-                  {firm.phone}
-                </a>
+                <span>{firm.addressDisplay}</span>
               </li>
               <li className="flex gap-3">
                 <Mail
@@ -132,9 +120,9 @@ export function Footer() {
             © {new Date().getFullYear()} {firm.name}. All rights reserved.
           </p>
           <p className="max-w-2xl">
-            Attorney advertising. Prior results do not guarantee a similar
-            outcome. The information on this site is for general purposes and
-            does not constitute legal advice.
+            Attorney advertising. The information on this site is for general
+            purposes and does not constitute legal advice or create an
+            attorney-client relationship.
           </p>
         </div>
       </div>

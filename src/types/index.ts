@@ -18,11 +18,13 @@ export type Attorney = {
   longBio: string;
   email: string;
   phone: string;
-  image: string;
+  image?: string;
   education: string[];
   barAdmissions: string[];
   practiceAreas: string[];
   yearsExperience: number;
+  military?: string;
+  additional?: { title: string; body: string }[];
 };
 
 export type Testimonial = {

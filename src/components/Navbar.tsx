@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { firm } from "@/data/firm";
+import { Logo } from "@/components/Logo";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -42,24 +43,7 @@ export function Navbar() {
         aria-label="Primary"
         className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between"
       >
-        <Link
-          href="/"
-          className="group inline-flex items-baseline gap-2"
-          aria-label={`${firm.name} home`}
-        >
-          <span className="text-2xl lg:text-[1.7rem] font-black tracking-tight bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 bg-clip-text text-transparent">
-            Sterling
-          </span>
-          <span className="text-2xl lg:text-[1.7rem] font-light text-slate-400">
-            &amp;
-          </span>
-          <span className="text-2xl lg:text-[1.7rem] font-black tracking-tight text-slate-900">
-            Vance
-          </span>
-          <span className="hidden sm:inline ml-1 text-xs font-bold tracking-[0.2em] text-slate-400">
-            LLP
-          </span>
-        </Link>
+        <Logo size="md" variant="light" />
 
         <ul className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map((link) => {
@@ -89,17 +73,17 @@ export function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href={firm.phoneHref}
+            href={firm.emailHref}
             className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-slate-900"
           >
-            <Phone className="w-4 h-4" aria-hidden="true" />
-            {firm.phone}
+            <Mail className="w-4 h-4" aria-hidden="true" />
+            {firm.email}
           </a>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-purple-600/30 transition-all hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-500"
           >
-            Schedule Consultation
+            Get In Touch
           </Link>
         </div>
 
@@ -141,17 +125,17 @@ export function Navbar() {
               );
             })}
             <a
-              href={firm.phoneHref}
+              href={firm.emailHref}
               className="mt-2 inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-slate-700"
             >
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              {firm.phone}
+              <Mail className="w-4 h-4" aria-hidden="true" />
+              {firm.email}
             </a>
             <Link
               href="/contact"
               className="mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600"
             >
-              Schedule Consultation
+              Get In Touch
             </Link>
           </div>
         </div>

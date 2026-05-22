@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
@@ -7,17 +7,17 @@ import { firm } from "@/data/firm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Schedule a confidential consultation with ${firm.name}.`,
+  description: `Get in touch with ${firm.name} — ${firm.addressDisplay}.`,
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Contact"
+        eyebrow="Get In Touch"
         title="Let's talk about"
         highlight="your matter."
-        description="Tell us a little about what you're facing. Initial consultations are confidential and complimentary."
+        description="Tell us a little about what you're facing. Initial conversations are confidential and without obligation."
       />
 
       <section className="pb-24 lg:pb-32">
@@ -26,22 +26,11 @@ export default function ContactPage() {
             <Reveal>
               <InfoCard
                 icon={<MapPin className="w-5 h-5" />}
-                title="Office"
-                lines={[
-                  firm.address.street,
-                  `${firm.address.city}, ${firm.address.state} ${firm.address.zip}`,
-                ]}
+                title="Address"
+                lines={[firm.addressDisplay]}
               />
             </Reveal>
-            <Reveal delay={0.05}>
-              <InfoCard
-                icon={<Phone className="w-5 h-5" />}
-                title="Phone"
-                lines={[firm.phone]}
-                href={firm.phoneHref}
-              />
-            </Reveal>
-            <Reveal delay={0.1}>
+            <Reveal delay={0.08}>
               <InfoCard
                 icon={<Mail className="w-5 h-5" />}
                 title="Email"
@@ -49,7 +38,7 @@ export default function ContactPage() {
                 href={firm.emailHref}
               />
             </Reveal>
-            <Reveal delay={0.15}>
+            <Reveal delay={0.16}>
               <InfoCard
                 icon={<Clock className="w-5 h-5" />}
                 title="Hours"

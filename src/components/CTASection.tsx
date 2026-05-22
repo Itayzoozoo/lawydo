@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { firm } from "@/data/firm";
 
 export function CTASection() {
@@ -28,11 +28,11 @@ export function CTASection() {
             <h2 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05]">
               Bring us your{" "}
               <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-                hardest case.
+                next matter.
               </span>
             </h2>
             <p className="mt-6 text-lg text-blue-100/90 max-w-2xl">
-              Initial consultations are confidential and complimentary. A
+              Initial conversations are confidential and without obligation. A
               partner will speak with you personally about your matter.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -40,18 +40,18 @@ export function CTASection() {
                 href="/contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-bold text-blue-900 bg-white hover:bg-blue-50 transition-all hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900 focus-visible:ring-white"
               >
-                Schedule a Consultation
+                Get In Touch
                 <ArrowRight
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
                 />
               </Link>
               <a
-                href={firm.phoneHref}
+                href={firm.emailHref}
                 className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-bold text-white border border-white/30 bg-white/5 hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900 focus-visible:ring-white"
               >
-                <Phone className="w-5 h-5" aria-hidden="true" />
-                {firm.phone}
+                <Mail className="w-5 h-5" aria-hidden="true" />
+                {firm.email}
               </a>
             </div>
           </div>

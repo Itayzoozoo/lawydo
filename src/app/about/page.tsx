@@ -1,99 +1,156 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { Award, Scale, Users, Target } from "lucide-react";
+import Link from "next/link";
+import { Award, Scale, Users, Target, ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { CTASection } from "@/components/CTASection";
 import { firm } from "@/data/firm";
 
 export const metadata: Metadata = {
-  title: "About the Firm",
-  description: `Learn about ${firm.name} — our founding partners, our values, and three decades of trusted legal counsel.`,
+  title: "About BPG",
+  description: firm.description,
 };
 
 const VALUES = [
   {
     icon: Scale,
-    title: "Judgment",
-    body: "Our value is not just in knowing the law — it's in knowing when to fight, when to settle, and when to advise restraint.",
+    title: "Multidisciplinary",
+    body: "Litigation, real estate and technology under one roof — integrated counsel for clients whose needs cross practice boundaries.",
   },
   {
     icon: Users,
-    title: "Partnership",
-    body: "We invest in long client relationships. Many of our clients have been with the firm for over twenty years.",
+    title: "Business-Oriented",
+    body: "Our partners have led legal and risk functions inside the institutions we now advise. We think like operators, not just lawyers.",
   },
   {
     icon: Target,
-    title: "Results",
-    body: "Strategy without execution is theater. Every matter ends in a measurable outcome we can stand behind.",
+    title: "Strategic",
+    body: "Pragmatic, results-driven counsel — from structuring a transaction to managing a regulatory matter or trying a complex case.",
   },
   {
     icon: Award,
-    title: "Integrity",
-    body: "We tell our clients what they need to hear, not what they want to hear. That is what makes our counsel worth seeking.",
+    title: "Trusted",
+    body: "Confidentiality, responsiveness and an unwavering dedication to our clients' success — the things that make us worth retaining.",
   },
+];
+
+const STATS = [
+  { value: "60+", label: "Years Combined Experience" },
+  { value: "500+", label: "Transactions Closed" },
+  { value: "3", label: "Practice Groups" },
 ];
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="About the Firm"
-        title="Built on judgment."
-        highlight="Driven by results."
-        description={`Since ${firm.founded}, ${firm.name} has represented founders, families, and Fortune 500 boards across the matters that shape their futures.`}
+        eyebrow="About BPG"
+        title="A premier Israeli law firm."
+        highlight="Built for results."
+        description={firm.longDescription}
       />
 
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <Reveal>
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/10">
-              <Image
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80"
-                alt="Sterling & Vance LLP attorneys in a strategy meeting"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-blue-950/40 via-transparent to-transparent"
-              />
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/10 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-700 text-white">
+              <div aria-hidden className="pointer-events-none absolute inset-0">
+                <div className="absolute -top-24 -left-12 h-80 w-80 rounded-full bg-blue-400/30 blur-3xl" />
+                <div className="absolute -bottom-24 -right-12 h-80 w-80 rounded-full bg-purple-400/30 blur-3xl" />
+              </div>
+              <div className="relative h-full flex flex-col justify-between p-10">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-7xl lg:text-8xl font-black tracking-tight bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
+                    B
+                  </span>
+                  <span className="text-7xl lg:text-8xl font-black tracking-tight bg-gradient-to-br from-blue-100 to-indigo-300 bg-clip-text text-transparent">
+                    P
+                  </span>
+                  <span className="text-7xl lg:text-8xl font-black tracking-tight bg-gradient-to-br from-indigo-200 to-purple-200 bg-clip-text text-transparent">
+                    G
+                  </span>
+                </div>
+                <div>
+                  <p className="text-xs font-bold tracking-[0.2em] uppercase text-blue-200">
+                    Bachar · Pordes · Goleczki
+                  </p>
+                  <p className="mt-3 text-2xl font-extrabold tracking-tight">
+                    Law Offices, Tel Aviv
+                  </p>
+                  <p className="mt-2 text-sm text-blue-100/80 max-w-sm leading-relaxed">
+                    Three founding partners. Sixty combined years. One
+                    business-oriented standard.
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
           <div>
             <Reveal>
               <p className="text-xs font-bold tracking-[0.2em] uppercase text-purple-700">
-                Our story
+                Our firm
               </p>
               <h2 className="mt-3 text-4xl sm:text-5xl font-black tracking-tight text-slate-900">
-                Three decades of{" "}
+                Strategic counsel,{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  consequential work.
+                  business-oriented.
                 </span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-6 space-y-5 text-[17px] leading-relaxed text-slate-700">
                 <p>
-                  {firm.name} was founded in {firm.founded} by Margaret Sterling
-                  and David Vance with a simple premise: that the best legal
-                  work happens in firms small enough to know their clients and
-                  large enough to handle anything that comes their way.
+                  BPG Law Offices is a leading Israeli law firm founded by
+                  three seasoned partners who share a commitment to delivering
+                  exceptional legal services with a business-oriented approach.
+                  Based in Israel&apos;s dynamic commercial center, we serve
+                  domestic and international clients across a broad spectrum of
+                  industries.
                 </p>
                 <p>
-                  Today, our 24 attorneys serve clients across the West Coast
-                  and beyond — from emerging companies and growth-stage founders
-                  to public boards, family offices, and individuals facing the
-                  most consequential moments of their lives. We have closed
-                  multi-billion-dollar transactions, tried hundreds of cases to
-                  verdict, and built estate plans that span generations.
+                  Our multidisciplinary practice combines deep expertise in
+                  technology, corporate law and dispute resolution, enabling us
+                  to provide comprehensive, integrated solutions tailored to
+                  each client&apos;s unique needs.
                 </p>
                 <p>
-                  What hasn&apos;t changed is the standard. Every matter is
-                  staffed leanly and led by a partner. We answer the phone. We
-                  return the call.
+                  We pride ourselves on responsiveness, strategic thinking and
+                  an unwavering dedication to our clients&apos; success.
                 </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <div className="mt-10 grid grid-cols-3 gap-4">
+                {STATS.map((s) => (
+                  <div key={s.label}>
+                    <div className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      {s.value}
+                    </div>
+                    <div className="mt-1 text-[10px] sm:text-xs font-bold tracking-widest uppercase text-slate-500 leading-tight">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.26}>
+              <div className="mt-10 flex gap-3">
+                <Link
+                  href="/attorneys"
+                  className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md shadow-purple-600/20 hover:shadow-lg hover:shadow-purple-600/30 hover:-translate-y-0.5 transition-all"
+                >
+                  Meet our partners
+                  <ArrowRight
+                    className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+                <Link
+                  href="/practice-areas"
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-slate-800 border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all"
+                >
+                  Our practice
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -104,12 +161,12 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-purple-700">
-              Our values
+              Our approach
             </p>
             <h2 className="mt-3 text-4xl sm:text-5xl font-black tracking-tight text-slate-900 max-w-2xl">
-              What we{" "}
+              How we{" "}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                stand for.
+                work.
               </span>
             </h2>
           </Reveal>

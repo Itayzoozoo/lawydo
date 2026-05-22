@@ -6,19 +6,19 @@ import { CTASection } from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Practice Areas",
   description:
-    "Deep expertise across corporate, family, criminal defense, personal injury, real estate, and estate planning matters.",
+    "Litigation, Real Estate, Technology, Corporate Governance, M&A, Commercial Law, Banking and Credit Cards — integrated counsel across BPG's practice groups.",
 };
 
 export default function PracticeAreasIndexPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Practice Areas"
-        title="Full-service representation."
+        eyebrow="Expertise"
+        title="Integrated counsel."
         highlight="Specialist depth."
-        description="Six core practices, each led by partners who have spent their careers mastering them. Choose an area to learn more."
+        description="Nine focus areas, three practice groups, one firm. Choose an area to learn more."
       />
-      <PracticeAreas heading="Our Practices" eyebrow="Where we work" />
+      <PracticeAreas heading="Practice Areas" eyebrow="What we do" />
       <CTASection />
     </>
   );

@@ -47,9 +47,9 @@ export function PracticeAreas({
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-lg text-slate-600 leading-relaxed"
           >
-            Deep expertise across the disciplines that matter most to our
-            clients — backed by trial-tested attorneys and three decades of
-            results.
+            Multidisciplinary practice combining deep expertise in technology,
+            corporate law and dispute resolution — comprehensive, integrated
+            solutions tailored to each client&apos;s unique needs.
           </motion.p>
         </div>
 

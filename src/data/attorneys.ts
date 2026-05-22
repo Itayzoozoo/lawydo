@@ -2,80 +2,78 @@ import type { Attorney } from "@/types";
 
 export const attorneys: Attorney[] = [
   {
-    slug: "margaret-sterling",
-    name: "Margaret Sterling",
+    slug: "gil-bachar",
+    name: "Gil Bachar",
     role: "Managing Partner",
-    bio: "Founding partner with three decades of corporate and M&A experience advising public companies, founders, and institutional investors.",
+    bio: "Gil Bachar is a partner specializing in civil and commercial litigation.",
     longBio:
-      "Margaret Sterling co-founded Sterling & Vance in 1994 and has led the firm's corporate practice ever since. She is regularly retained by Fortune 500 boards on bet-the-company transactions and by emerging companies on their first institutional rounds. Margaret has been named to the Daily Journal's Top 100 Lawyers in California for twelve consecutive years and lectures at USC Gould School of Law on deal structuring.",
-    email: "msterling@sterlingvance.com",
-    phone: "(213) 555-0143",
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80",
+      "Gil Bachar has extensive professional experience in court appearances across all judicial instances, handling complex disputes in civil and commercial law, with an emphasis on real estate law, planning and construction law, inheritance law, and administrative law, including managing complex petitions against local authorities. He also has significant experience representing institutional bodies in complex legal proceedings.\n\nPrior to founding the firm, Gil Bachar completed his internship and worked for approximately 5 years at the law firm Boyer, Zarnkin, Roizen & Co., starting from 2002.",
+    email: "gil.b@bpglaw.co.il",
+    phone: "+972 (054) 7384829",
     education: [
-      "J.D., Stanford Law School, 1991",
-      "B.A. Economics, Yale University, 1988",
+      "Bachelor's degree in Law (LL.B.), Academic Center of Law and Business, Ramat Gan",
     ],
-    barAdmissions: ["California", "New York", "U.S. Supreme Court"],
-    practiceAreas: ["Corporate Law", "Real Estate"],
-    yearsExperience: 32,
+    barAdmissions: ["Member of the Israel Bar Association since 2005"],
+    practiceAreas: ["Litigation", "Real Estate", "Corporate Governance"],
+    yearsExperience: 21,
+    military:
+      "Served between 1991–1995 as a combatant and commander in the IDF's Counter-Terrorism Unit (LOTAR).",
   },
   {
-    slug: "david-vance",
-    name: "David Vance",
-    role: "Founding Partner, Head of Litigation",
-    bio: "Veteran trial lawyer with 200+ verdicts and a reputation for taking the cases other firms won't.",
+    slug: "gil-pordes",
+    name: "Gil Pordes",
+    role: "Senior Partner",
+    bio: "Gil Pordes is a partner and head of the Real Estate department at the firm.",
     longBio:
-      "David Vance leads the firm's litigation and criminal defense practices. A former federal prosecutor in the Central District of California, David has tried more than 200 cases to verdict, including high-profile white-collar, civil rights, and complex commercial disputes. He is a fellow of the American College of Trial Lawyers and has been recognized as a Best Lawyers \"Lawyer of the Year\" four times.",
-    email: "dvance@sterlingvance.com",
-    phone: "(213) 555-0144",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
+      "Gil Pordes has extensive professional experience in providing counsel, accompaniment, and representation to private and corporate clients in a wide range of real estate transactions, including: sale and purchase transactions of newly built apartments (\"contractor apartments\"), second-hand apartments, agricultural plots, commercial real estate, ongoing support for income-producing real estate companies, lease and management agreements in the income-producing real estate sector, residential lease agreements, co-ownership agreements in real estate, and more.\n\nIn addition, Gil Pordes is both a notary and holds a certification from the Guardian General for drafting enduring powers of attorney.",
+    email: "gil.p@bpglaw.co.il",
+    phone: "+972 (054) 7727271",
     education: [
-      "J.D., Harvard Law School, 1990",
-      "B.A. Political Science, Georgetown University, 1987",
+      "Bachelor's degree in Law (LL.B.), Tel Aviv University",
+      "Master's degree in Law (LL.M.), Tel Aviv University",
     ],
-    barAdmissions: ["California", "9th Circuit", "U.S. Supreme Court"],
-    practiceAreas: ["Criminal Defense", "Personal Injury"],
-    yearsExperience: 34,
+    barAdmissions: ["Member of the Israel Bar Association since 2001"],
+    practiceAreas: ["Real Estate", "Commercial Law"],
+    yearsExperience: 25,
+    additional: [
+      {
+        title: "Additional Certifications",
+        body: "Notary. Certified by the Guardian General to draft enduring powers of attorney.",
+      },
+    ],
   },
   {
-    slug: "amelia-okafor",
-    name: "Amelia Okafor",
-    role: "Partner, Family Law",
-    bio: "Board-certified family law specialist handling high-asset divorces and complex custody matters with discretion and resolve.",
+    slug: "ido-goleczki",
+    name: "Ido Goleczki",
+    role: "Senior Partner",
+    bio: "Ido is a prominent expert in Computer, Information Technology, Cybersecurity, Artificial Intelligence (AI), Privacy, and Data Protection Law.",
     longBio:
-      "Amelia Okafor chairs the firm's family law group. A certified family law specialist by the California State Bar, she is known for her steady judgment in emotionally charged matters and her command of forensic accounting in high-net-worth dissolutions. Amelia frequently serves as a private judge and trained mediator in collaborative divorces.",
-    email: "aokafor@sterlingvance.com",
-    phone: "(213) 555-0145",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80",
+      "Ido is a seasoned professional with extensive experience leading legal and risk departments in both major Israeli financial institutions and international FinTech environments. His expertise spans Israeli banking regulation, cloud technology compliance, corporate governance, and regulatory strategy across multiple jurisdictions including Israel, the EU, and the UAE. His work includes drafting and negotiating complex transactions, including licensing, cloud and SaaS offerings, Big Data, Open Source, outsourcing, and large-scale IT project agreements, as well as handling internet-related legal and contractual matters.\n\nIdo also specializes in cyber, privacy, and data protection, with extensive experience in regulatory compliance, drafting and negotiating a wide range of agreements and policies for international and national institutions, managing data breach cases and security incidents, addressing spam-related issues, and has vast experience in purchasing companies and performing M&As.",
+    email: "ido.g@bpglaw.co.il",
+    phone: "+972 (054) 4973539",
     education: [
-      "J.D., UC Berkeley School of Law, 2005",
-      "B.A. Sociology, Spelman College, 2002",
+      "Master's degree in Law (LL.M.), Bar Ilan University",
+      "Bachelor's degree in Law (LL.B.), College of Management",
     ],
-    barAdmissions: ["California"],
-    practiceAreas: ["Family Law", "Estate Planning"],
-    yearsExperience: 19,
-  },
-  {
-    slug: "jonathan-reyes",
-    name: "Jonathan Reyes",
-    role: "Senior Associate, Real Estate & Estate Planning",
-    bio: "Trusted advisor to developers, family offices, and high-net-worth individuals on complex property and legacy matters.",
-    longBio:
-      "Jonathan Reyes represents real estate developers, investors, and multi-generational families across acquisitions, financings, and estate strategy. Before joining Sterling & Vance, he practiced at an AmLaw 100 firm in New York and clerked for the Hon. Maria L. Cervantes on the U.S. District Court for the Southern District of California. He is fluent in Spanish and Portuguese.",
-    email: "jreyes@sterlingvance.com",
-    phone: "(213) 555-0146",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
-    education: [
-      "J.D., Columbia Law School, 2014",
-      "B.S. Finance, NYU Stern School of Business, 2011",
+    barAdmissions: [
+      "Member of the Israel Bar Association since 2005",
+      "Member of the Privacy Committee since 2007",
     ],
-    barAdmissions: ["California", "New York"],
-    practiceAreas: ["Real Estate", "Estate Planning"],
-    yearsExperience: 11,
+    practiceAreas: [
+      "Technology",
+      "Banking & Technology",
+      "Credit Cards",
+      "Corporate Governance",
+      "Mergers & Acquisitions",
+      "Banking",
+    ],
+    yearsExperience: 21,
+    additional: [
+      {
+        title: "Academic Experience",
+        body: "Tutor in \"Investments – Legal Aspects\" at Haifa University and MTA.",
+      },
+    ],
   },
 ];
 
